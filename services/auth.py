@@ -11,4 +11,4 @@ def getAuthToken():
     headers = {'Authorization': 'Basic ' + clientCredsB64.decode(),
                'Content-Type':'application/x-www-form-urlencoded'}
     resp = requests.post(secrets.spotifyAuthURL,headers=headers,data=token_data)
-    return resp.json()
+    return resp.json()["access_token"]
